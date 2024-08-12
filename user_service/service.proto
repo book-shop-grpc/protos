@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package user_service;
+
+import "github.com/book-shop-grpc/protos/user_service/message.proto";
+
+option go_package = "genproto/user_service";
+
+
+// Services related to User Service
+
+service UserService {
+  rpc RegisterUser(User) returns (User);
+  rpc LogIn(LogInRequest) returns (LogInResponse);
+}
+
+service BasketService {
+  rpc AddToBasket(Basket) returns (BasketResponse);
+  rpc GetBasket(Basket) returns (BasketResponse);
+  rpc RemoveFromBasket(Basket) returns (Empty);
+}
