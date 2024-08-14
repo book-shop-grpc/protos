@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package user_service;
 
-import "github.com/book-shop-grpc/protos/user_service/message.proto";
+import "message.proto";
 
 option go_package = "genproto/user_service";
 
@@ -10,7 +10,10 @@ option go_package = "genproto/user_service";
 // Services related to User Service
 
 service UserService {
-  rpc RegisterUser(User) returns (User);
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+  rpc GetUser(GetUserRequest) returns (GetUserResponse);
+  rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
+  rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
   rpc LogIn(LogInRequest) returns (LogInResponse);
 }
 

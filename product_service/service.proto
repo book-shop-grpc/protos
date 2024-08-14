@@ -2,23 +2,24 @@ syntax = "proto3";
 
 package product_service;
 
-import "product_service/message.proto";
+import "messages.proto";
 
 option go_package = "genproto/product_service";
 
-
-// Services related to Product Service
-
+// Services related to Product Service  
 service ProductService {
-  rpc CreateAuthor(Author) returns (Author);
-  rpc GetAuthor(Author) returns (Author);
-  rpc UpdateAuthor(Author) returns (Author);
-  rpc DeleteAuthor(Empty) returns (Empty);
-  rpc GetAuthorList(Empty) returns (AuthorListResponse);
+  // Author CRUD operations
+  rpc CreateAuthor(CreateAuthorRequest) returns (Author);
+  rpc GetAuthor(GetAuthorRequest) returns (Author);
+  rpc UpdateAuthor(UpdateAuthorRequest) returns (Author);
+  rpc DeleteAuthor(DeleteAuthorRequest) returns (Empty);
+  rpc ListAuthors(Empty) returns (AuthorListResponse);
 
-  rpc CreateBook(Book) returns (Book);
-  rpc GetBook(Book) returns (Book);
-  rpc UpdateBook(Book) returns (Book);
-  rpc DeleteBook(Empty) returns (Empty);
-  rpc GetBookList(Empty) returns (BookListResponse);
+  // Book CRUD operations
+  rpc CreateBook(CreateBookRequest) returns (Book);
+  rpc GetBook(GetBookRequest) returns (Book);
+  rpc UpdateBook(UpdateBookRequest) returns (Book);
+  rpc DeleteBook(DeleteBookRequest) returns (Empty);
+  rpc ListBooks(Empty) returns (BookListResponse);
 }
+    

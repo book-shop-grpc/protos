@@ -6,7 +6,6 @@ import "google/protobuf/timestamp.proto";
 
 option go_package = "genproto/product_service";
 
-
 // Messages related to Product Service
 
 message Author {
@@ -14,6 +13,26 @@ message Author {
   string full_name = 2;
   google.protobuf.Timestamp date_of_birth = 3;
   google.protobuf.Timestamp date_of_death = 4;
+}
+
+message CreateAuthorRequest {
+  Author author = 1;
+}
+
+message GetAuthorRequest {
+  string author_id = 1;
+}
+
+message UpdateAuthorRequest {
+  Author author = 1;
+}
+
+message DeleteAuthorRequest {
+  string author_id = 1;
+}
+
+message AuthorListResponse {
+  repeated Author authors = 1;
 }
 
 message Book {
@@ -26,8 +45,20 @@ message Book {
   string author_id = 7;
 }
 
-message AuthorListResponse {
-  repeated Author authors = 1;
+message CreateBookRequest {
+  Book book = 1;
+}
+
+message GetBookRequest {
+  string book_id = 1;
+}
+
+message UpdateBookRequest {
+  Book book = 1;
+}
+
+message DeleteBookRequest {
+  string book_id = 1;
 }
 
 message BookListResponse {
@@ -36,4 +67,3 @@ message BookListResponse {
 
 message Empty {
 }
-
