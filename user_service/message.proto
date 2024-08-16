@@ -86,5 +86,10 @@ message GetListReq {
   int32 offset = 2;
 }
 
+message GetListResp {
+  repeated User users = 1;
+  int32 count = 2;
+}
+
 message Empty {
 }
