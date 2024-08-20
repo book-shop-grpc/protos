@@ -77,9 +77,6 @@ message SelectedBook {
   string user_id = 5;
 }
 
-message BasketResponse {
-  string message = 1;
-}
 
 message GetListReq {
   int32 limit = 1;

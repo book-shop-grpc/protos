@@ -18,7 +18,7 @@ service UserService {
 }
 
 service BasketService {
-  rpc AddToBasket(Basket) returns (BasketResponse);
-  rpc GetBasket(Basket) returns (BasketResponse);
+  rpc AddToBasket(Basket) returns (Basket);
+  rpc GetBasket(Basket) returns (Basket);
   rpc RemoveFromBasket(Basket) returns (Empty);
 }
