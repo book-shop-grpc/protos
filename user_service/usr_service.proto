@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package user_service;
 
-import "message.proto";
+import "usr_message.proto";
 
 option go_package = "genproto/user_service";
 

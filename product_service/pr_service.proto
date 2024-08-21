@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package product_service;
 
-import "messages.proto";
+import "pr_message.proto";
 
 option go_package = "genproto/product_service";
 
