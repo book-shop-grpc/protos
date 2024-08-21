@@ -6,6 +6,7 @@ import "messages.proto";
 
 option go_package = "genproto/product_service";
 
+
 // Services related to Product Service  
 service ProductService {
   // Author CRUD operations
@@ -13,13 +14,13 @@ service ProductService {
   rpc GetAuthor(GetAuthorRequest) returns (Author);
   rpc UpdateAuthor(UpdateAuthorRequest) returns (Author);
   rpc DeleteAuthor(DeleteAuthorRequest) returns (Empty);
-  rpc ListAuthors(Empty) returns (AuthorListResponse);
+  rpc ListAuthors(GetListReq) returns (AuthorListResponse);
 
   // Book CRUD operations
   rpc CreateBook(CreateBookRequest) returns (Book);
   rpc GetBook(GetBookRequest) returns (Book);
   rpc UpdateBook(UpdateBookRequest) returns (Book);
   rpc DeleteBook(DeleteBookRequest) returns (Empty);
-  rpc ListBooks(Empty) returns (BookListResponse);
+  rpc ListBooks(GetListReq) returns (BookListResponse);
 }
     
